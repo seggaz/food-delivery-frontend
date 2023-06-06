@@ -1,0 +1,20 @@
+.navBar {
+	display: flex;
+	padding: 30px 20px;
+	background: #F7F4FF;
+	a {
+		margin-left: 40px;
+		padding: 5px 50px;
+		color: #9197B3;
+		text-decoration: none;
+		&[class="active"] {
+			color: #fff;
+			background: #5932EA;
+			border-radius: 10px;
+			path {
+				stroke: #fff;
+			}
+		}
+	}
+}
+
