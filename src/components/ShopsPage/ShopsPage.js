@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import BACKEND_URL from '../../config';
+
 import axios from 'axios';
 import styles from './ShopsPage.module.scss';
 
@@ -9,7 +11,7 @@ const ShopsPage = ({ setCartItems }) => {
   const [shops, setShops] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/shops')
+	axios.get(`${BACKEND_URL}/shops`)
       .then(response => {
         setShops(response.data.shops);
       })
@@ -21,11 +23,19 @@ const ShopsPage = ({ setCartItems }) => {
   const handleShopClick = (shop) => {
     setSelectedShop(shop);
   };
-
   const handleAddToCart = (product) => {
-    setCartItems((prevCartItems) => [...prevCartItems, product]);
-    navigate('/order');
+	const newCartItem = {
+	  id: product.id,
+	  name: product.name,
+	  image: product.image,
+	  price: product.price,
+	  quantity: 1,
+	};
+  
+	setCartItems((prevCartItems) => [...prevCartItems, newCartItem]);
+	navigate('/orders');
   };
+  
 
   return (
     <div className={styles.shopsPage}>

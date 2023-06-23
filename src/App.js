@@ -1,9 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import styles from './App.module.scss';
 import ShopsPage from './components/ShopsPage/ShopsPage';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navbar from './components/Navbar/Navbar';
-import { useState } from 'react';
+import OrdersList from './components/OrderList/OrderList';
+
 
 
 function App() {
@@ -18,11 +20,12 @@ function App() {
 			element={<ShopsPage 
 					setCartItems={setCartItems} />} />
         <Route
-          path="/order"
+          path="/orders"
           element={<ShoppingCart 
 					cartItems={cartItems} 
 					setCartItems={setCartItems} />}
         />
+		 <Route path="/orders/list" element={<OrdersList />}/>
       </Routes>
     </div>
   );
