@@ -14,6 +14,7 @@ const OrdersList = () => {
     localStorage.removeItem('orders');
     setOrders([]);
   };
+
   return (
     <div className={styles.ordersList}>
       <h2>List of orders:</h2>
@@ -23,23 +24,31 @@ const OrdersList = () => {
         <div>
           <ul>
             {orders.map((order) => (
-              <li key={order.orderId}>
+              <li key={order.id}>
                 <p>Order ID: <span>{order.orderId}</span></p>
                 <p>Email: <span>{order.email}</span></p>
                 <p>Phone: <span>{order.phone}</span></p>
                 <p>Name: <span>{order.name}</span></p>
                 <p>Products:</p>
-                <ul>
-                  {order.products.map((product) => (
-                    <li key={product.id}>
-                      <span>{product.name}</span> - Quantity: <span>{product.quantity}</span>
-                    </li>
-                  ))}
+                <ul className={styles.orderProducts}>
+                  {Array.isArray(order.products) ? (
+                    order.products.map((product) => (
+                      <li key={product.productId}>
+                        <p>- Product ID: <span>{product.id}</span></p>
+                        <p>- Quantity: <span>{product.quantity}</span></p>
+                        <p>- Name: <span>{product.name}</span></p>
+                      </li>
+                    ))
+                  ) : (
+                    <p>Invalid product data</p>
+                  )}
                 </ul>
-				<button
+                <button
                   className={styles.deleteButton}
                   onClick={() => handleDeleteOrder(order.orderId)}
-                >Remove Order</button>
+                >
+                  Remove Order
+                </button>
               </li>
             ))}
           </ul>
@@ -48,8 +57,10 @@ const OrdersList = () => {
           </button>
         </div>
       )}
+	  {/* <h3>Total: {getTotalPrice}</h3> */}
     </div>
   );
 };
 
 export default OrdersList;
+

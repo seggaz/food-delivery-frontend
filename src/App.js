@@ -7,7 +7,6 @@ import Navbar from './components/Navbar/Navbar';
 import OrdersList from './components/OrderList/OrderList';
 
 
-
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
@@ -22,10 +21,13 @@ function App() {
         <Route
           path="/orders"
           element={<ShoppingCart 
-					cartItems={cartItems} 
-					setCartItems={setCartItems} />}
+					cartItems={cartItems}
+					setCartItems={setCartItems}
+					 />}
         />
-		 <Route path="/orders/list" element={<OrdersList />}/>
+		 <Route 
+		 	path="/orders/list" 
+			element={<OrdersList />}/>
       </Routes>
     </div>
   );
