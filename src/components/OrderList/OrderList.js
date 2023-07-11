@@ -34,6 +34,9 @@ const OrdersList = () => {
                   {Array.isArray(order.products) ? (
                     order.products.map((product) => (
                       <li key={product.id}>
+
+                      
+02_Add-loaders
                         <p>- Product ID: <span>{product.id}</span></p>
                         <p>- Quantity: <span>{product.quantity}</span></p>
                         <p>- Name: <span>{product.name}</span></p>
@@ -57,6 +60,7 @@ const OrdersList = () => {
           </button>
         </div>
       )}
+	  {/* <h3>Total: {getTotalPrice}</h3> */}
     </div>
   );
 };
