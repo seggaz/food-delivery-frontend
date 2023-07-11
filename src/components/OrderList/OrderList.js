@@ -33,7 +33,10 @@ const OrdersList = () => {
                 <ul className={styles.orderProducts}>
                   {Array.isArray(order.products) ? (
                     order.products.map((product) => (
-                      <li key={product.productId}>
+                      <li key={product.id}>
+
+                      
+02_Add-loaders
                         <p>- Product ID: <span>{product.id}</span></p>
                         <p>- Quantity: <span>{product.quantity}</span></p>
                         <p>- Name: <span>{product.name}</span></p>

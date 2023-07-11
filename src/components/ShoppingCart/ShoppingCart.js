@@ -46,7 +46,7 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
     axios
       .post(`${BACKEND_URL}/orders`, orderData)
       .then((response) => {
-		const orderId = response.data.orderedProducts[0].order_id;
+		const orderId = response.data.orderId;
 		console.log('Order placed successfully');
 		setCartItems([]);
 		setCustomerEmail('');
