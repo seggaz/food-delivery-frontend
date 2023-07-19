@@ -26,7 +26,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           repository: seggaz/food-delivery-frontend
-        with:
           node-version: ${{matrix.version}}
       - name: Install deps
         run: cd client && npm install
