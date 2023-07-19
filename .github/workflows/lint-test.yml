@@ -27,7 +27,7 @@ jobs:
         with:
           repository: seggaz/food-delivery-frontend
         with:
-          node-version: ${{maitrix.version}}
+          node-version: ${{matrix.version}}
       - name: Install deps
         run: cd client && npm install
       - name: Test frontend
