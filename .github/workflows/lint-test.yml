@@ -1,18 +1,21 @@
 name: Frontend Lint and Test
 
 on: push
+
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout frontend
         uses: actions/checkout@v3
         with:
           repository: seggaz/food-delivery-frontend
+          path: food-delivery/client
       - name: Install deps
-        run: cd $GITHUB_WORKSPACE/client && npm install
+        run: cd food-delivery/client && npm install
       - name: Lint frontend
-        run: cd $GITHUB_WORKSPACE/client && npm install
+        run: cd food-delivery/client && npm run lint
 
   test:
     needs: [lint]
@@ -20,14 +23,18 @@ jobs:
       matrix:
         version: [14, 16, 18]
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout frontend
         uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
         with:
           repository: seggaz/food-delivery-frontend
+          path: food-delivery/client
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
           node-version: ${{matrix.version}}
       - name: Install deps
-        run: cd $GITHUB_WORKSPACE/client && npm install
+        run: cd food-delivery/client && npm install
       - name: Test frontend
-        run: cd $GITHUB_WORKSPACE/client && npm install
+        run: cd food-delivery/client && npm run test
