@@ -30,4 +30,4 @@ jobs:
       - name: Install deps
         run: cd $GITHUB_WORKSPACE/client && npm install
       - name: Test frontend
-        run: run: cd $GITHUB_WORKSPACE/client && npm install
+        run: cd $GITHUB_WORKSPACE/client && npm install
