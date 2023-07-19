@@ -1,6 +1,6 @@
 name: Frontend Lint and Test
 
-on: push
+on: [push]
 
 jobs:
   lint:
@@ -21,7 +21,7 @@ jobs:
     needs: [lint]
     strategy:
       matrix:
-        version: [14, 16, 18]
+        version: [ 18.x ]
     runs-on: ubuntu-latest
 
     steps:
