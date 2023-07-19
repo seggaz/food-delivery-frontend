@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useState } from 'react';
 import styles from './App.module.scss';
 import ShopsPage from './components/ShopsPage/ShopsPage';
@@ -14,6 +14,7 @@ function App() {
     <div className={styles.App}>
       <Navbar />
       <Routes>
+	  <Route path="/" element={<Navigate to="/shops" />} />
         <Route 
 			path="/shops" 
 			element={<ShopsPage 
