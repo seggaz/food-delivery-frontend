@@ -1,0 +1,37 @@
+name: Frontend Lint and Test
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frontend
+        uses: actions/checkout@v3
+        with:
+          repository: seggaz/food-delivery-frontend
+      - name: Install deps
+        run: cd client && npm install
+      - name: Lint frontend
+        run: cd client && npm run lint
+
+  test:
+    needs: [lint]
+    strategy:
+      matrix:
+        version: [14, 16, 18]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frontend
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          repository: seggaz/food-delivery-frontend
+        with:
+          node-version: ${{maitrix.version}}
+      - name: Install deps
+        run: cd client && npm install
+      - name: Test frontend
+        run: cd client && npm run test
