@@ -10,9 +10,9 @@ jobs:
         with:
           repository: seggaz/food-delivery-frontend
       - name: Install deps
-        run: cd client && npm install
+        run: npm ci
       - name: Lint frontend
-        run: cd client && npm run lint
+        run: npm run lint
 
   test:
     needs: [lint]
@@ -28,6 +28,6 @@ jobs:
           repository: seggaz/food-delivery-frontend
           node-version: ${{matrix.version}}
       - name: Install deps
-        run: cd client && npm install
+        run: npm ci
       - name: Test frontend
-        run: cd client && npm run test
+        run: npm run test
