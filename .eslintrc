@@ -3,6 +3,9 @@
 	  "react-app",
 	  "react-app/jest"
 	],
+	"parserOptions": {
+		"sourceType": "module"
+	  },
 	"rules": {
 	  "prefer-const": "error",
 	  "semi": ["warn", "always"],
