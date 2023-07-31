@@ -2,11 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
   "type": "commonjs",
-=======
-  "type": "module",
->>>>>>> 2028b940c9875fae38d6b878ef5f40248d36d7f2
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -28,16 +24,12 @@
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
-<<<<<<< HEAD
 	"lint": "eslint ."
   },
   "jest": {
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/(?!(axios)/)"
     ]
-=======
-    "lint": "npx eslint ./src"
->>>>>>> 2028b940c9875fae38d6b878ef5f40248d36d7f2
   },
   "lint-staged": {
     "*.js": [
@@ -69,7 +61,6 @@
     ]
   },
   "devDependencies": {
-<<<<<<< HEAD
     "@babel/core": "^7.22.9",
     "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@babel/preset-env": "^7.22.9",
@@ -77,11 +68,6 @@
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
     "axios-mock-adapter": "^1.21.5",
     "babel-jest": "^29.6.2",
-=======
-    "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
-    "@babel/preset-env": "^7.22.9",
-    "@cfaester/enzyme-adapter-react-18": "^0.7.0",
->>>>>>> 2028b940c9875fae38d6b878ef5f40248d36d7f2
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.1",
     "history": "^5.3.0",
