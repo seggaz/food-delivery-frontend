@@ -15,7 +15,6 @@
     "react-dom": "^18.2.0",
     "react-loader-spinner": "^5.3.4",
     "react-loading-skeleton": "^3.3.1",
-    "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "sass": "^1.62.1",
     "web-vitals": "^2.1.4"
@@ -23,9 +22,14 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "npx eslint ./src"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/(?!(axios)/)"
+    ]
   },
   "lint-staged": {
     "*.js": [
@@ -57,11 +61,17 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.22.9",
     "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
     "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
     "@cfaester/enzyme-adapter-react-18": "^0.7.0",
+    "axios-mock-adapter": "^1.21.5",
+    "babel-jest": "^29.6.2",
     "eslint": "^8.0.0",
     "eslint-config-react-app": "^7.0.1",
-    "lint-staged": "^13.2.3"
+    "history": "^5.3.0",
+    "lint-staged": "^13.2.3",
+    "react-router-dom": "^6.14.2"
   }
 }

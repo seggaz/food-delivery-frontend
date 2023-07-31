@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import styles from './OrderList.module.scss';
+import styles from './OrdersList.module.scss';
 
 const OrdersList = () => {
   const [orders, setOrders] = useState(JSON.parse(localStorage.getItem('orders')) || []);
@@ -11,10 +11,10 @@ const OrdersList = () => {
   };
 
   const handleDeleteAllOrders = () => {
-    localStorage.removeItem('orders');
-    setOrders([]);
+	localStorage.setItem('orders', JSON.stringify([]));
+	setOrders([]);
   };
-
+  
   return (
     <div className={styles.ordersList}>
       <h2>List of orders:</h2>
@@ -24,7 +24,7 @@ const OrdersList = () => {
         <div>
           <ul>
             {orders.map((order) => (
-              <li key={order.id}>
+              <li key={order.orderId}>
                 <p>Order ID: <span>{order.orderId}</span></p>
                 <p>Email: <span>{order.email}</span></p>
                 <p>Phone: <span>{order.phone}</span></p>
@@ -34,9 +34,6 @@ const OrdersList = () => {
                   {Array.isArray(order.products) ? (
                     order.products.map((product) => (
                       <li key={product.id}>
-
-                      
-02_Add-loaders
                         <p>- Product ID: <span>{product.id}</span></p>
                         <p>- Quantity: <span>{product.quantity}</span></p>
                         <p>- Name: <span>{product.name}</span></p>
