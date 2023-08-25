@@ -1,11 +1,16 @@
 {
 	"extends": [
-	  "react-app",
-	  "react-app/jest"
+	  "react-app"
 	],
-	"parserOptions": {
-		"sourceType": "module"
+	"env": {
+		"node": true,
+		"es2022": true,
+		"jest": true
 	  },
+	  "parserOptions": {
+		"ecmaVersion": "latest"
+	  },
+	 		
 	"rules": {
 	  "prefer-const": "error",
 	  "semi": ["warn", "always"],

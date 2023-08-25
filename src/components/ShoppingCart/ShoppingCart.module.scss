@@ -17,6 +17,19 @@
 		box-shadow: -1px 4px 32px -15px rgba(0,0,0,0.75);
 		padding: 20px 100px 100px 100px;
 		text-align: center;
+		animation: slideUp 0.5s ease-in-out;
+
+		@keyframes slideUp {
+			0% {
+			  transform: translateY(-40px);
+			  opacity: 0;
+			}
+			100% {
+			  transform: translateY(0);
+			  opacity: 1;
+			}
+		  }
+		  
 		p {
 			text-align: left;
 		}

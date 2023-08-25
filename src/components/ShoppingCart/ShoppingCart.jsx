@@ -4,7 +4,7 @@ import styles from './ShoppingCart.module.scss';
 import BACKEND_URL from '../../config';
 import { useNavigate } from 'react-router-dom';
 
-const ShoppingCart = ({ cartItems, setCartItems }) => {
+const ShoppingCart = ({ cartItems, setCartItems, authToken }) => {
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
@@ -43,8 +43,9 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
       orders_products: orderedProducts,
     };
 
-    axios
-      .post(`${BACKEND_URL}/orders`, orderData)
+    axios.post(`${BACKEND_URL}/orders`, orderData, {
+		headers: { Authorization: `Bearer ${authToken}` }
+	  })
       .then((response) => {
 		const orderId = response.data.orderId;
 		setCartItems([]);
