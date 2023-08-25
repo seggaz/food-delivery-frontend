@@ -4,7 +4,7 @@ import styles from './App.module.scss';
 import ShopsPage from './components/ShopsPage/ShopsPage';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import Navbar from './components/Navbar/Navbar';
-import OrdersList from './components/OrderList/OrderList';
+import OrdersList from './components/OrdersList/OrdersList';
 
 
 function App() {

@@ -8,7 +8,7 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
-  const [orderedProducts, setOrderedProducts] = useState([]);
+  const [, setOrderedProducts] = useState([]);
 
   const navigate = useNavigate();
 
@@ -47,7 +47,6 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
       .post(`${BACKEND_URL}/orders`, orderData)
       .then((response) => {
 		const orderId = response.data.orderId;
-		console.log('Order placed successfully');
 		setCartItems([]);
 		setCustomerEmail('');
 		setCustomerPhone('');
@@ -65,7 +64,6 @@ const ShoppingCart = ({ cartItems, setCartItems }) => {
 		orders.push(newOrder);
 		localStorage.setItem('orders', JSON.stringify(orders));
 	  
-		// Відображення інформації замовлення
 		const orderInfo = `Email: ${customerEmail}\nPhone: ${customerPhone}\nName: ${customerName}\nOrder ID: ${orderId}\nTotal Price: ${getTotalPrice()}`;
 		const productInfo = orderedProducts.map((product) => {
 		  return `Product ID: ${product.id}\nQuantity: ${product.quantity}\nName: ${product.name}`;
