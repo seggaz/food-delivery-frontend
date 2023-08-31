@@ -29,9 +29,22 @@
   input {
 	width: 100%;
 	padding: 12px;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
+	&.invalid {
+		border-color: red;
+	  }
+	
+	  &.valid {
+		border-color: #0be43e;
+	  }
+  }
+
+  .errorMessage {
+	color: red;
+	font-size: 14px;
+	padding-bottom: 20px;
   }
   
   button {
