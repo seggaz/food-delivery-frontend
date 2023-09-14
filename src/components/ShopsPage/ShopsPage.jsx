@@ -6,7 +6,7 @@ import styles from './ShopsPage.module.scss';
 import SkeletonLoader from './SkeletonLoader';
 import Spinner from './Spinner';
 
-const ShopsPage = ({ setCartItems }) => {
+const ShopsPage = ({ setCartItems, authToken }) => {
   const navigate = useNavigate();
   const [selectedShop, setSelectedShop] = useState(null);
   const [shops, setShops] = useState([]);
@@ -14,17 +14,18 @@ const ShopsPage = ({ setCartItems }) => {
   const [displayedProducts, setDisplayedProducts] = useState(4);
 
   useEffect(() => {
-    axios
-      .get(`${BACKEND_URL}/shops`)
-      .then((response) => {
-        setShops(response.data.shops);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.error('Error fetching shops:', error);
-      });
-  }, []);
-
+	axios
+	  .get(`${BACKEND_URL}/shops`, {
+		headers: { Authorization: `Bearer ${authToken}` }
+	  })
+	  .then((response) => {
+		setShops(response.data.shops);
+		setIsLoading(false);
+	  })
+	  .catch((error) => {
+	  });
+  }, [authToken]);
+  
   const handleShopClick = (shop) => {
     setSelectedShop(shop);
   };

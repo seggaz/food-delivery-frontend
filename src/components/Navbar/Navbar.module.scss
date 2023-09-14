@@ -2,6 +2,39 @@
 	display: flex;
 	padding: 30px 20px;
 	background: #F7F4FF;
+		li:nth-child(3) {
+			margin-left: auto;
+			padding: 5px 50px;
+			a {
+				color: #4c535a;
+				border: 2px solid #0be43e;
+				border-radius: 10px;
+				&[class="active"] {
+					color: #fff;
+					background: #14b732;
+					border-radius: 10px;
+					path {
+						stroke: #fff;
+					}
+				}
+			}		
+		}
+		li:nth-child(4) {
+			padding: 5px 50px;
+			a {
+				color: #4c535a;
+				border: 2px solid #0be43e;
+				border-radius: 10px;
+				&[class="active"] {
+					color: #fff;
+					background: #14b732;
+					border-radius: 10px;
+					path {
+						stroke: #fff;
+					}
+				}
+			}		
+		}
 	a {
 		margin-left: 40px;
 		padding: 5px 50px;
@@ -14,6 +47,11 @@
 			path {
 				stroke: #fff;
 			}
+		}
+	}
+	.logoutButton {
+		button {
+			margin-top: -20px;
 		}
 	}
 }
