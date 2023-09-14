@@ -1,0 +1,55 @@
+{
+	"name": "client",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"dependencies": {
+	  "@testing-library/jest-dom": "^5.16.5",
+	  "@testing-library/react": "^13.4.0",
+	  "@testing-library/user-event": "^13.5.0",
+	  "axios": "^1.4.0",
+	  "enzyme": "^3.11.0",
+	  "jest": "^27.5.1",
+	  "react": "^18.2.0",
+	  "react-content-loader": "^6.2.1",
+	  "react-dom": "^18.2.0",
+	  "react-hook-form": "^7.45.4",
+	  "react-loader-spinner": "^5.3.4",
+	  "react-loading-skeleton": "^3.3.1",
+	  "react-router-dom": "^6.11.2",
+	  "react-scripts": "5.0.1",
+	  "sass": "^1.62.1",
+	  "web-vitals": "^2.1.4"
+	},
+	"scripts": {
+	  "start": "react-scripts start",
+	  "build": "react-scripts build",
+	  "test": "react-scripts test",
+	  "eject": "react-scripts eject",
+	  "lint": "eslint ."
+	},
+	"jest": {
+	  "transformIgnorePatterns": [
+		"<rootDir>/node_modules/(?!(axios)/)"
+	  ]
+	},
+	"lint-staged": {
+	  "*.js": [
+	  ]
+	},
+	"devDependencies": {
+	  "@babel/core": "^7.22.10",
+	  "@babel/plugin-proposal-private-property-in-object": "^7.16.0",
+	  "@babel/preset-env": "^7.22.10",
+	  "@babel/preset-react": "^7.22.5",
+	  "@babel/preset-typescript": "^7.22.5",
+	  "@cfaester/enzyme-adapter-react-18": "^0.7.0",
+	  "axios-mock-adapter": "^1.21.5",
+	  "babel-jest": "^29.6.2",
+	  "eslint": "^8.0.0",
+	  "eslint-config-react-app": "^7.0.1",
+	  "history": "^5.3.0",
+	  "lint-staged": "^13.2.3",
+	  "react-router-dom": "^6.14.2"
+	}
+  }
